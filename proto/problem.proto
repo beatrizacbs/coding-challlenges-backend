@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package proto;
+
+enum Difficulty {
+  EASY = 0;
+  MEDIUM = 1;
+  HARD = 2;
+}
+
+message Resolution {
+  message Code {
+    string code = 1;
+    string language = 2;
+  }
+
+  string description = 1;
+  Code code = 2;
+}
+
+message ProblemRequest {
+  int32 id = 1;
+  string company = 2;
+  Difficulty difficulty = 3;
+
+
+}
